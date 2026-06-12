@@ -1,0 +1,51 @@
+
+var grid = [][]int{
+	{0, 0, 1},
+	{0, 1, 1},
+	{0, 0, 0},
+	{1, 0, 0},
+	{0, 0, 0},
+	{0, 1, 0},
+	{0, 1, 1},
+	{0, 0, 1},
+	{1, 0, 0},
+}
+
+func dfs(grid [][]int, row, col int) {
+	rows := len(grid)
+	cols := len(grid[0])
+
+	
+	if row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] == 0 {
+		return
+	}
+
+	
+	grid[row][col] = 0
+
+	
+	dfs(grid, row+1, col)
+	dfs(grid, row-1, col)
+	dfs(grid, row, col+1)
+	dfs(grid, row, col-1)
+}
+
+func countIslands(grid [][]int) int {
+	count := 0
+
+	for row := 0; row < len(grid); row++ {
+		for col := 0; col < len(grid[0]); col++ {
+			if grid[row][col] == 1 {
+				count++
+				dfs(grid, row, col)
+			}
+		}
+	}
+
+	return count
+}
+
+func main() {
+	result := countIslands(grid)
+	fmt.Printf("\nJumlah pulau: %d\n", result)
+}
