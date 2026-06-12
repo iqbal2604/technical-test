@@ -1,1 +1,27 @@
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	n := 10
+// 	a := 0
+// 	b := 1
+
+// 	if n <= 0 {
+// 		fmt.Println("Jumlah suku harus lebih dari 0.")
+// 		return
+// 	}
+
+// 	for i := 1; i < n; i++ {
+// 		fmt.Printf("%d", a)
+// 		if i < n-1 {
+// 			fmt.Printf(", ")
+// 		}
+// 		next := a + b
+// 		a = b
+// 		b = next
+// 	}
+// 	fmt.Println()
+// }
+
 0, 1, 1, 2, 3, 5, 8, 13, 21
